@@ -46,3 +46,7 @@ console.log(filePath);
 
 const absolute = path.resolve(__dirname, "content", "subfolder", "test.txt");
 console.log(absolute);
+
+
+//////////////////////////////FS Module
+// fs module has two versions 
