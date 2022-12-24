@@ -47,6 +47,49 @@ console.log(filePath);
 const absolute = path.resolve(__dirname, "content", "subfolder", "test.txt");
 console.log(absolute);
 
-
 //////////////////////////////FS Module
-// fs module has two versions 
+// fs module has two versions
+
+// Using readfile sync
+const { readFileSync, writeFileSync, write } = require("fs");
+
+const first = readFileSync("./content/first.txt", "utf-8");
+const second = readFileSync("./content/second.txt", "utf-8");
+
+console.log(first, second);
+
+// Using writeFilesync
+// if the file is not there node will create one but if the will is there node will overwrite all the content present there and change it in the new file
+//if you don't want to overwrite: they write another object {flag: 'a'} at last
+writeFileSync(
+  "./content/result-sync.txt",
+  `Here is the result: ${first}, ${second}`,
+  { flags: "a" } // this will append the content
+);
+
+// Using async functions
+const { readFile, writeFile } = require("fs");
+
+readFile("./content/result-sync.txt", "utf-8", (err, result) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  console.log(result);
+  const first = result;
+  writeFile(
+    "./content/result-async.txt",
+    `Here is the result: ${first}, and ${second}`,
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      console.log(result);
+    }
+  );
+});
+// if we don't provide the utf-8 encoding in between then it will give the buffer
+
+
+// Day 3
