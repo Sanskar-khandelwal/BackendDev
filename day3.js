@@ -19,22 +19,23 @@ server.listen(5000);
 //now there goes a slide section that will cover {event loop, async patterns, events emitter and streams} to get more knowledge on this kindly use the docs
 // to check all the examples code of async function head over to course-api.com
 
-
 // using promise to read file
-const {readFile} = require('fs')
+const { readFile } = require("fs");
 
 const getText = (path) => {
   return new Promise((resolve, reject) => {
-    readFile(path, 'utf8', (err, data) => {
-      if(err){
-        reject(err)
+    readFile(path, "utf8", (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
       }
-      else{
-        resolve(data)
-      }
-    })
-  })
-}
+    });
+  });
+};
 
-getText('./content/first.txt').then((result) => console.log(result)).catch((err)=> console.log(err));
+getText("./content/first.txt")
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
 
+//Done with the day 3, Will learn about async and await now
