@@ -92,4 +92,4 @@ readFile("./content/result-sync.txt", "utf-8", (err, result) => {
 // if we don't provide the utf-8 encoding in between then it will give the buffer
 
 
-// Day 3
+
