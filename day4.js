@@ -18,3 +18,35 @@ getCountryData();
 
 //Error handling in promises
 //use catch at end to handle promise
+
+const fs = require('fs').promises;
+
+// const util = require('util')
+// const readFilePromise = util.promisify(readFile);
+// const writeFilePromise = util.promisify(writeFile);
+ 
+// const getText = function(path){
+//   return new Promise((resolve, reject) => {
+//     fs.readFile(path, 'utf8', (err, data) => {
+//       if(err){
+//         reject(err)
+//       }
+//       else{
+//         resolve(data)
+//       }
+//     })
+//   })
+// }
+
+const start = async function(){
+  try{
+  const first = await readFile('./content/first.txt', 'utf8');
+  const second = await readFile('./content/second.txt', 'utf8');
+  console.log(first, second)
+  }
+  catch(err){
+    console.log(err)
+  }
+}
+
+
