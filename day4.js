@@ -14,17 +14,15 @@ const getCountryData = function () {
 
 getCountryData();
 
-
-
 //Error handling in promises
 //use catch at end to handle promise
 
-const fs = require('fs').promises;
+const fs = require("fs").promises;
 
 // const util = require('util')
 // const readFilePromise = util.promisify(readFile);
 // const writeFilePromise = util.promisify(writeFile);
- 
+
 // const getText = function(path){
 //   return new Promise((resolve, reject) => {
 //     fs.readFile(path, 'utf8', (err, data) => {
@@ -38,15 +36,26 @@ const fs = require('fs').promises;
 //   })
 // }
 
-const start = async function(){
-  try{
-  const first = await readFile('./content/first.txt', 'utf8');
-  const second = await readFile('./content/second.txt', 'utf8');
-  console.log(first, second)
+const start = async function () {
+  try {
+    const first = await readFile("./content/first.txt", "utf8");
+    const second = await readFile("./content/second.txt", "utf8");
+    console.log(first, second);
+  } catch (err) {
+    console.log(err);
   }
-  catch(err){
-    console.log(err)
-  }
-}
+};
+// Events in Node.js
+const EventEmitter = require("event");
+const { Stream, Readable, Duplex } = require("stream");
+const customEmitter = new EventEmitter();
 
+//Streams in Node
+// Streams are used to send the sequenctiol data in node 
+// 4 types of Stream
+// writeable
+// Readable
+// Duplex
+// transform 
 
+// stream extends events
