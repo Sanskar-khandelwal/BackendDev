@@ -19,12 +19,18 @@ app.get("/api/colors", (req, res) => {
   res.json(newColors);
 });
 
-app.get("/api/colors/1", (req, res) => {
-  console.log(colors);
-  const singleColor = colors.find((single) => single.id == "1");
-  console.log(singleColor);
-  res.json(singleColor);
+// setting up a route parameter
+app.get("/api/colors/:colorId", (req, res) => {
+  const { colorId } = req.params;
+  const singleColor = colors.find((single) => single.id == Number(colorId));
+  // console.log(singleColor);
+  if (!singleColor) {
+    return res.status(404).send("<h1>Product does not exist</h1>");
+  }
+  return res.json(singleColor);
 });
+
+app.get("/api/proudcts/1");
 
 app.listen(5000, () => {
   console.log("server is listening on port 5000");
