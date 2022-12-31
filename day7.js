@@ -24,7 +24,7 @@ app.get("/api/v1/query", (req, res) => {
         "<h1> There is no color in this category / No product matched your search </h1>"
       );
   }
-  res.status(200).json(sortedColors);
+  res.status(200).json(sortedColors); 
 });
 
 app.listen(5000, () => {
