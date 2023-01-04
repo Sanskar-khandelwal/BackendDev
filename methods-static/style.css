@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+form{
+    max-width: 700px;
+    margin: 50px auto;
+    
+}
+
+button{
+    color: white;
+    text-align: center;
+    background: linear-gradient(90deg, rgb(41, 41, 164), rgb(18, 18, 74));
+    margin: 13px auto;
+    font-size: 1.2rem;
+    padding: 2px 5px;
+    width: 100%;
+
+}
+
+input[type = text]{
+    padding: 9px 5px;
+    border: 1px solid #BCBCBC;
+    margin: auto;
+    width: 100%;
+    border-radius: 8px;
+
+    display: block;
+}
+label{
+    font-size: 2rem;
+}
